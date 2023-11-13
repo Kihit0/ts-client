@@ -1,0 +1,47 @@
+@mixin font-family($font, $size, $weight) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin flex($positionX: flex-start, $positionY: flex-start) {
+  display: flex;
+  justify-content: $positionX;
+  align-items: $positionY;
+}
+
+//default x = 0 , y = 0
+/* ==== PADDING ==== */
+@mixin paddingXY($positionX: 0, $positionY: 0) {
+  padding: $positionY $positionX;
+}
+
+@mixin paddingY($positionYT: 0, $positionYB: 0) {
+  padding: $positionYT 0 $positionYB;
+}
+
+@mixin paddingX($positionXR: 0, $positionXL: 0) {
+  padding: 0 $positionXR 0 $positionXL;
+}
+
+/* ==== MARGIN ==== */
+@mixin marginXY($positionX: 0, $positionY: 0) {
+  margin: $positionY $positionX;
+}
+
+@mixin marginY($positionYT: 0, $positionYB: 0) {
+  margin: $positionYT 0 $positionYB;
+}
+
+@mixin marginX($positionXR: 0, $positionXL: 0) {
+  margin: 0 $positionXR 0 $positionXL;
+}
+
+/* ==== FONT ==== */
+
+@mixin font($font: "Regular", $size: inherit, $weight: 400, $color: inherit){
+    font-family: "Robot" + #{$font};
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}
