@@ -3,7 +3,7 @@
     @include marginXY();
     box-sizing: border-box;
     
-    @include font("Regular", 16px, $darkGreenColor);
+    @include font("Regular", 16px, 400, $darkGreenColor);
 }
 
 a{
@@ -13,4 +13,8 @@ a{
 
 body{
     background-color: $mainColor;
+}
+
+ul{
+    list-style: none;
 }

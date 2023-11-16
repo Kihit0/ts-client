@@ -1,7 +1,16 @@
-import React from "react";
+import { Navigation } from 'components/ux/Navigation'
+import { Main } from 'pages/Main/Main'
+import React from 'react'
 
-export default class App extends React.Component {
-  render(): React.ReactNode {
-    return <div>Whereas recognition of the inherent dignity</div>;
-  }
+export const App: React.FC = () => {
+  return (
+    <div {...{className: "App container"}}>
+      <div {...{className: "app-navigation"}}>
+        <Navigation />
+      </div>
+      <div {...{className: "App-main"}}>
+        <Main />
+      </div>
+    </div>
+  )
 }
