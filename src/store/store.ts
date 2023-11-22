@@ -4,7 +4,11 @@ import logger from "redux-logger";
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: ["book/get/fulfilled", "books/get/fulfilled"],
+    }
+  }).concat(logger)
 });
 
 export type AppDispatch = typeof store.dispatch;

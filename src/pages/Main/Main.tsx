@@ -1,19 +1,18 @@
-import { useAppDispatch, useAppSelector } from "hooks/appHooks";
+import { useAppSelector } from "hooks/appHooks";
 import React from "react";
 import { getBooksAll } from "store/reducer/books/bookReducer";
 
 export const Main: React.FC = () => {
-  const store = useAppSelector(store => store.books)
-  const dispatch = useAppDispatch();
+
+  const books = useAppSelector(store => store.books)
+
+  const s = async () => {
+     await getBooksAll({});
+  }
 
   React.useEffect(() => {
-    const s = async () => {
-      const result = await dispatch(getBooksAll({}));
-      console.log(result);
-    };
-
-    s();
-  }, []);
-  console.log(store)
+    s()
+  }, [])
+  console.log(books)
   return <div>Main</div>;
 };

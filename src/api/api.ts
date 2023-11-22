@@ -17,9 +17,11 @@ export class Api {
     this.url = url;
     this.method = method;
     this.payload = payload;
+    
   }
 
-  public async request(): Promise<AxiosResponse> {
+  public async request(): Promise<{data: object, status: number, statusText: string}> {
+
     const id = this.payload?.id !== undefined ? this.payload.id : "" 
     const baseRequest = {
       method: this.method,
@@ -39,7 +41,8 @@ export class Api {
       });
 
     const response: AxiosResponse = await axios(baseRequest);
-
-    return response;
+    const {data, status, statusText} = response
+    return {status, statusText, data};
   }
 }
+
